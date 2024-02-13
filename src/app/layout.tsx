@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sample Next App",
+  title: "Portfolio Next App",
   description: "Engineered by a monkey...",
 };
 
@@ -17,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="w-full flex justify-center">{children}</main>
+        <Navbar />
+        <div className="w-full flex justify-center">{children}</div>
+        <Footer />
       </body>
     </html>
   );

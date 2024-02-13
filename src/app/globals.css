@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+
+    @apply bg-light-base;
+    @apply dark:bg-dark-base;
+
+    @apply text-light-text;
+    @apply dark:text-dark-text;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  header {
+    @apply w-full;
+
+    @apply bg-light-surface0 dark:bg-dark-surface0;
+  }
+
+  p {
+    @apply text-center md:text-justify;
+  }
+
+  p,
+  code {
+    font-family:
+      "JetBrains Mono",
+      Roboto,
+      -apple-system,
+      sans-serif;
+  }
+
+  .nav-li {
+    counter-increment: item 1;
+    position: relative;
+
+    font-family:
+      "JetBrains Mono",
+      Roboto,
+      -apple-system,
+      sans-serif;
+
+    /*@apply text-light-sky dark:text-dark-sapphire;*/
+  }
+
+  .li-mobile {
+    @apply text-xl;
+  }
+  /*.li-mobile::before {
+    content: none !important;
+  }
+  .li-mobile::after {
+    content: "." "0" counter(item);
+    margin: 0 2px;
+
+    @apply text-light-teal dark:text-dark-teal;
+  }*/
+
+  .nav-li-element {
+    @apply capitalize;
+
+    @apply transition transform hover:scale-110 hover:text-light-maroon hover:dark:text-dark-maroon;
+  }
+  .nav-li-element::before {
+    content: "0" counter(item) ".";
+    margin: 0 2px;
+
+    @apply text-light-teal dark:text-dark-teal;
+  }
+
+  .seperator {
+    @apply select-none text-light-overlay1 dark:text-dark-overlay1;
+  }
+}
